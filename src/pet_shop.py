@@ -32,3 +32,26 @@ def find_pet_by_name(petshop, petname):
         if pet['name'] == petname:
             returned_pet = pet
     return returned_pet
+
+def remove_pet_by_name(petshop, petname):
+    returned_pet = None
+    for pet in petshop['pets']:
+        if pet['name'] == petname:
+            returned_pet = pet
+            petshop['pets'].remove(returned_pet)
+
+def add_pet_to_stock(petshop, newpet):
+    petshop['pets'].append(newpet)
+
+def get_customer_cash(customer):
+    return customer["cash"]
+
+def remove_customer_cash(customer, amount):
+    customer["cash"] -= amount
+
+def get_customer_pet_count(customer):
+    return len(customer["pets"])
+
+def add_pet_to_customer(customer, pet):
+    customer["pets"].append(pet)
+
